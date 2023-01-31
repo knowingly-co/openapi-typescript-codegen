@@ -41,8 +41,8 @@ export const writeClientServices = async (
                     p.isRequired = false
                 }
             }
+            op.name = op.name.replace(service.name, '');
         }
-
 
         const file = resolve(outputPath, `${service.name}${postfix}.ts`);
         const templateResult = templates.exports.service({
